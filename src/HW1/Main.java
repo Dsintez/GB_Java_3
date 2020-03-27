@@ -22,17 +22,30 @@ public class Main {
     }
 
     private static void task3() {
-        Box<Apple> boxForApple = new Box<>();
+        Box<Apple> boxForApple1 = new Box<>();
+        Box<Apple> boxForApple2 = new Box<>();
         Box<Orange> boxForOrange = new Box<>();
-        for (int i = 0; i < 75; i++) {
-            boxForApple.add(new Apple());
+
+        for (int i = 0; i < 25; i++) {
+            boxForApple1.add(new Apple());
         }
+
+        System.out.println("Вес первой коробки с яблоками - " + boxForApple1.getWeight());
+
+        for (int i = 0; i < 50; i++) {
+            boxForApple2.add(new Apple());
+        }
+
+        System.out.println("Вес второй коробки с яблоками - " + boxForApple2.getWeight());
+        System.out.println("Пересыпаем яблоки в одну коробку");
+        boxForApple1.intersperseIn(boxForApple2);
 
         for (int i = 0; i < 50; i++) {
             boxForOrange.add(new Orange());
         }
+        System.out.println("Вес коробки с апельсинами - " + boxForOrange.getWeight());
 
-        System.out.println("Ящики имеют одинаковый вес - " + boxForApple.compare(boxForOrange));
+        System.out.println("Ящики имеют одинаковый вес - " + boxForApple2.compare(boxForOrange));
     }
 
     private static void task2() {

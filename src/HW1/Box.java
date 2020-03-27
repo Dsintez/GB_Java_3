@@ -25,4 +25,11 @@ public class Box<T extends Fruit> {
     public boolean compare(Box box) {
         return this.getWeight() == box.getWeight();
     }
+
+    public void intersperseIn(Box<T> box){
+        for (T fruit : fruits) {
+            box.add(fruit);
+        }
+        fruits = new ArrayList<>();
+    }
 }
